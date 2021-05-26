@@ -1,0 +1,114 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, the Altera Quartus Prime License Agreement,
+# the Altera MegaCore Function License Agreement, or other 
+# applicable license agreement, including, without limitation, 
+# that your use is for the sole purpose of programming logic 
+# devices manufactured by Altera and sold by Altera or its 
+# authorized distributors.  Please refer to the applicable 
+# agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus Prime
+# Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
+# Date created = 01:11:16  May 16, 2021
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		alu_completa_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus Prime software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "Cyclone V"
+set_global_assignment -name DEVICE 5CSXFC6D6F31C6
+set_global_assignment -name TOP_LEVEL_ENTITY alu_completa
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 15.1.0
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "01:11:16  MAY 16, 2021"
+set_global_assignment -name LAST_QUARTUS_VERSION 15.1.0
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 256
+set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (Verilog)"
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda_simulation
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
+set_location_assignment PIN_AJ4 -to ack_in
+set_location_assignment PIN_AC22 -to cout[1]
+set_location_assignment PIN_AB22 -to cout[0]
+set_location_assignment PIN_AB21 -to disp0[6]
+set_location_assignment PIN_AF19 -to disp0[5]
+set_location_assignment PIN_AE19 -to disp0[4]
+set_location_assignment PIN_AG20 -to disp0[3]
+set_location_assignment PIN_AF20 -to disp0[2]
+set_location_assignment PIN_AG21 -to disp0[1]
+set_location_assignment PIN_AF21 -to disp0[0]
+set_location_assignment PIN_AH22 -to disp1[6]
+set_location_assignment PIN_AF23 -to disp1[5]
+set_location_assignment PIN_AG23 -to disp1[4]
+set_location_assignment PIN_AE23 -to disp1[3]
+set_location_assignment PIN_AE22 -to disp1[2]
+set_location_assignment PIN_AG22 -to disp1[1]
+set_location_assignment PIN_AD21 -to disp1[0]
+set_location_assignment PIN_AD20 -to dispS[6]
+set_location_assignment PIN_AA19 -to dispS[5]
+set_location_assignment PIN_AC20 -to dispS[4]
+set_location_assignment PIN_AA20 -to dispS[3]
+set_location_assignment PIN_AD19 -to dispS[2]
+set_location_assignment PIN_W19 -to dispS[1]
+set_location_assignment PIN_Y19 -to dispS[0]
+set_location_assignment PIN_AD30 -to drdata[7]
+set_location_assignment PIN_AC28 -to drdata[6]
+set_location_assignment PIN_V25 -to drdata[5]
+set_location_assignment PIN_W25 -to drdata[4]
+set_location_assignment PIN_AC30 -to drdata[3]
+set_location_assignment PIN_AB28 -to drdata[2]
+set_location_assignment PIN_Y27 -to drdata[1]
+set_location_assignment PIN_AB30 -to drdata[0]
+set_location_assignment PIN_AF24 -to neg[1]
+set_location_assignment PIN_AE24 -to neg[0]
+set_location_assignment PIN_AD24 -to negd1
+set_location_assignment PIN_AC23 -to negd2
+set_location_assignment PIN_AC29 -to sel
+set_location_assignment PIN_AA30 -to sub
+set_location_assignment PIN_AF25 -to zero[1]
+set_location_assignment PIN_AG25 -to zero[0]
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name VERILOG_FILE "../fant ncl_lib/NCL_LIB.v"
+set_global_assignment -name VERILOG_FILE ../somador_4bits_cin_of/somador_4bits_cin_of.v
+set_global_assignment -name VERILOG_FILE ../seg7_dual_rail/seg7_dual_rail.v
+set_global_assignment -name VERILOG_FILE "../../Celula Muller 2 Entradas/muller2estruturalB/muller2estruturalB.v"
+set_global_assignment -name VERILOG_FILE "../../Reg Assincrono/Reg Assincrono estr2/reg_ass_estr2.v"
+set_global_assignment -name VERILOG_FILE "../../Celula M de N 3 de 5/celula_3_de_5_comp/celula_3_de_5_comp.v"
+set_global_assignment -name VERILOG_FILE "../../Celula M de N 2 de 3/celula 2 de 3 comp/celula2de3comp.v"
+set_global_assignment -name VERILOG_FILE "../../Reg Assincrono 4 bits/reg_ass_4bits.v"
+set_global_assignment -name VERILOG_FILE ../zero_detector_4bits/zero_detector_4bits.v
+set_global_assignment -name VERILOG_FILE ../somador_completo/somador_completo.v
+set_global_assignment -name VERILOG_FILE ../compl2_4bits/compl2_4bits.v
+set_global_assignment -name VERILOG_FILE ../alu_4bits/alu_4bits.v
+set_global_assignment -name VERILOG_FILE ../estagio_assincrono_alu/estagio_assincron_alu.v
+set_global_assignment -name VERILOG_FILE "../../Estagio Assincrono Dual Rail 4bits/est_ass_dual_rail_4bits.v"
+set_global_assignment -name VERILOG_FILE alu_completa.v
+set_global_assignment -name SOURCE_FILE db/alu_completa.cmp.rdb

@@ -1,0 +1,28 @@
+module alu_completa(drdata,sel,sub,disp0,disp1,dispS,cout,neg,zero);
+
+input [7:0] drdata;
+input sel,sub;
+output [6:0]disp0,disp1,dispS;
+output [1:0]cout,neg,zero;
+
+wire[7:0]reg0,reg1,num0,num1,soma;
+wire ack_bar,sub_bar;
+wire[1:0]cin;
+
+assign sel ? reg1 =drdata: reg0=drdata;
+
+est_ass_dual_rail_4bits (reg0,ack,num0);
+est_ass_dual_rail_4bits (reg1,ack,num1);
+
+
+estagio_assincron_alu(num0,num1,sub,soma,cout,neg,zero,ack);
+
+not (ack_bar,ack);
+not (sub_bar,sub);
+and (cin[1],ack_bar,sub);
+and (cin[0],ack_bar,sub_bar);
+
+
+
+
+endmodule
