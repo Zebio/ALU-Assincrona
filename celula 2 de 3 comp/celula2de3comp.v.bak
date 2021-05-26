@@ -1,0 +1,16 @@
+module celula2de3comp(a,b,c,z);
+input a,b,c;
+output reg z;
+
+always@(a,b,c)
+begin
+if ((a+b+c)==0)
+	z=0;
+	
+if ((a+b+c)>=2)
+	z=1;
+
+
+end
+
+endmodule

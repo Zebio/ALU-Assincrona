@@ -1,0 +1,38 @@
+module celula_3_de_5_comp(a,b,c,d,e,z);
+input a,b,c,d,e;
+output reg z;
+wire[4:0] vetor;
+
+assign vetor[0]=a;
+assign vetor[1]=b;
+assign vetor[2]=c;
+assign vetor[3]=d;
+assign vetor[4]=e;
+
+always@(a,b,c,d,e)
+begin
+	case (vetor)
+		5'b00000: z=0;
+		5'b11100: z=1;
+		5'b11010: z=1;
+		5'b10110: z=1;
+		5'b01110: z=1;
+		5'b11001: z=1;
+		5'b10101: z=1;
+		5'b01101: z=1;
+		5'b10011: z=1;
+		5'b01011: z=1;
+		5'b00111: z=1;
+		5'b11110: z=1;
+		5'b11101: z=1;
+		5'b11011: z=1;
+		5'b10111: z=1;
+		5'b01111: z=1;
+		5'b11111: z=1;
+
+		default: z=z;
+	endcase
+
+end
+
+endmodule

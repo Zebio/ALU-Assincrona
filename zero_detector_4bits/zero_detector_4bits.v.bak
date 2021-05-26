@@ -1,0 +1,8 @@
+module zero_detector_4bits(a3t,a3f,a2t,a2f,a1t,a1f,a0t,a0f,zt,zf);
+input a3t,a3f,a2t,a2f,a1t,a1f,a0t,a0f;
+output zt,zf;
+
+
+
+
+endmodule

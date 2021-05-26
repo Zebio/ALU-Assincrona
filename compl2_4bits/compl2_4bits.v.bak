@@ -1,0 +1,19 @@
+module compl2_4bits(a3t,a3f,a2t,a2f,a1t,a1f,a0t,a0f,subt,subf,r3t,r3f,r2t,r2f,r1t,r1f,r0t,r0f);
+
+input a3t,a3f,a2t,a2f,a1t,a1f,a0t,a0f,subt,subf;
+output r3t,r3f,r2t,r2f,r1t,r1f,r0t,r0f;
+
+
+THXOR(r3t,a3t,subf,a3f,subt);
+THXOR(r3f,a3t,subt,a3f,subf);
+
+THXOR(r2t,a2t,subf,a2f,subt);
+THXOR(r2f,a2t,subt,a2f,subf);
+
+THXOR(r1t,a1t,subf,a1f,subt);
+THXOR(r1f,a1t,subt,a1f,subf);
+
+THXOR(r0t,a0t,subf,a0f,subt);
+THXOR(r0f,a0t,subt,a0f,subf);
+
+endmodule
