@@ -54,6 +54,17 @@ set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name EDA_MAP_ILLEGAL_CHARACTERS ON -section_id eda_simulation
+set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
+set_global_assignment -name EDA_ENABLE_GLITCH_FILTERING ON -section_id eda_simulation
+set_global_assignment -name EDA_TEST_BENCH_ENABLE_STATUS TEST_BENCH_MODE -section_id eda_simulation
+set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH estagio_assincron_alu_tb -section_id eda_simulation
+set_global_assignment -name EDA_TEST_BENCH_NAME estagio_assincron_alu_tb -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME dut -section_id estagio_assincron_alu_tb
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME estagio_assincron_alu_tb -section_id estagio_assincron_alu_tb
+set_global_assignment -name VERILOG_FILE ../reg_ass_estr2/reg_ass_estr2.v
+set_global_assignment -name VERILOG_FILE "../../Celula Muller 2 Entradas/muller2estruturalB/muller2estruturalB.v"
+set_global_assignment -name VERILOG_FILE ../somador_4bits_cin_of/somador_4bits_cin_of.v
 set_global_assignment -name VERILOG_FILE "../../Celula M de N 3 de 5/celula_3_de_5_comp/celula_3_de_5_comp.v"
 set_global_assignment -name VERILOG_FILE "../../Celula M de N 2 de 3/celula 2 de 3 comp/celula2de3comp.v"
 set_global_assignment -name VERILOG_FILE "../../../Fant NCL sandbox/NCL_sandbox/common/NCL_LIB.v"
@@ -61,9 +72,55 @@ set_global_assignment -name VERILOG_FILE ../zero_detector_4bits/zero_detector_4b
 set_global_assignment -name VERILOG_FILE ../somador_completo/somador_completo.v
 set_global_assignment -name VERILOG_FILE ../somador_4bits_cin/somador_4bits_cin.v
 set_global_assignment -name VERILOG_FILE ../compl2_4bits/compl2_4bits.v
-set_global_assignment -name VERILOG_FILE "../../Reg Assincrono/Reg Assincrono estr2/reg_ass_estr2.v"
 set_global_assignment -name VERILOG_FILE "../../Reg Assincrono/Reg Assincrono Comportamental/reg_ass_comp.v"
 set_global_assignment -name VERILOG_FILE "../../Reg Assincrono 4 bits/reg_ass_4bits.v"
 set_global_assignment -name VERILOG_FILE ../alu_4bits/alu_4bits.v
 set_global_assignment -name VERILOG_FILE estagio_assincron_alu.v
+set_global_assignment -name EDA_WRITE_NODES_FOR_POWER_ESTIMATION ALL_NODES -section_id eda_simulation
+set_global_assignment -name EDA_TEST_BENCH_DESIGN_INSTANCE_NAME dut -section_id eda_simulation
+set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST ON -section_id eda_simulation
+set_global_assignment -name EDA_TEST_BENCH_FILE estagio_assincron_alu_tb.v -section_id estagio_assincron_alu_tb
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
+set_location_assignment PIN_AK2 -to a[7]
+set_location_assignment PIN_AK3 -to a[6]
+set_location_assignment PIN_AK4 -to a[5]
+set_location_assignment PIN_AK6 -to a[4]
+set_location_assignment PIN_AK7 -to a[3]
+set_location_assignment PIN_AK8 -to a[2]
+set_location_assignment PIN_AK9 -to a[1]
+set_location_assignment PIN_AK11 -to a[0]
+set_location_assignment PIN_AK12 -to ack_in
+set_location_assignment PIN_AK13 -to ack_out
+set_location_assignment PIN_AK14 -to b[7]
+set_location_assignment PIN_AK16 -to b[6]
+set_location_assignment PIN_AK18 -to b[5]
+set_location_assignment PIN_AK19 -to b[4]
+set_location_assignment PIN_AK21 -to b[3]
+set_location_assignment PIN_AK22 -to b[2]
+set_location_assignment PIN_AK23 -to b[1]
+set_location_assignment PIN_AK24 -to b[0]
+set_location_assignment PIN_AK26 -to cout[1]
+set_location_assignment PIN_AK27 -to cout[0]
+set_location_assignment PIN_AK28 -to neg[1]
+set_location_assignment PIN_AK29 -to neg[0]
+set_location_assignment PIN_AA12 -to soma[7]
+set_location_assignment PIN_AA13 -to soma[6]
+set_location_assignment PIN_AA14 -to soma[5]
+set_location_assignment PIN_AA15 -to soma[4]
+set_location_assignment PIN_AA16 -to soma[3]
+set_location_assignment PIN_AA18 -to soma[2]
+set_location_assignment PIN_AA19 -to soma[1]
+set_location_assignment PIN_AA20 -to soma[0]
+set_location_assignment PIN_AB12 -to sub[1]
+set_location_assignment PIN_AC12 -to sub[0]
+set_location_assignment PIN_AB13 -to zero[1]
+set_location_assignment PIN_AA24 -to zero[0]
+set_global_assignment -name SDC_FILE "arquivo SDC.sdc"
+set_global_assignment -name POWER_USE_INPUT_FILES ON
+set_global_assignment -name POWER_DEFAULT_TOGGLE_RATE "12.5 %"
+set_global_assignment -name POWER_DEFAULT_INPUT_IO_TOGGLE_RATE "12.5 %"
+set_global_assignment -name POWER_USE_PVA OFF
+set_global_assignment -name POWER_REPORT_SIGNAL_ACTIVITY ON
+set_global_assignment -name POWER_INPUT_FILE_NAME simulation/modelsim/estagio_assincron_alu.vcd -section_id estagio_assincron_alu.vcd
+set_instance_assignment -name POWER_READ_INPUT_FILE estagio_assincron_alu.vcd -to estagio_assincron_alu
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

@@ -7,11 +7,11 @@ output[1:0]cout,neg,zero;
 
 wire[7:0] comp1;
 
-compl2_4bits(b,sub,comp1);
+compl2_4bits comp_2(b,sub,comp1);
 
-somador_4bits_cin_of(a,comp1,sub,soma,cout);
+somador_4bits_cin_of som_4bits_cin_of(a,comp1,sub,soma,cout);
 
-zero_detector_4bits(soma,zero);
+zero_detector_4bits zero_detector(soma,zero);
 
 assign neg[1]=soma[7];
 assign neg[0]=soma[6];

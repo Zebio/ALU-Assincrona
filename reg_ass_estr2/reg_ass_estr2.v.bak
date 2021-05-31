@@ -1,0 +1,23 @@
+module reg_ass_estr2(Et,Ef,hab,St,Sf);
+
+input Et,Ef,hab;
+
+output St,Sf;
+
+wire w2;//w1
+
+reg w1;
+
+initial
+	w1=1;
+always@(*)
+	w1=~hab;
+
+//not(w1,hab);
+
+nor(w2,Et,w1,St);
+nor(St,w1,w2);
+nor(w3,Ef,w1,Sf);
+nor(Sf,w3,w1);
+
+endmodule 
