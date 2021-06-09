@@ -17,5 +17,5 @@ Sim dir               :  simulation\modelsim
 
 Info: Starting NativeLink simulation with ModelSim-Altera software
 Sourced NativeLink script c:/altera_lite/15.1/quartus/common/tcl/internal/nativelink/modelsim.tcl
-Warning: File estagio_assincron_alu_run_msim_gate_verilog.do already exists - backing up current file as estagio_assincron_alu_run_msim_gate_verilog.do.bak
+Warning: File estagio_assincron_alu_run_msim_gate_verilog.do already exists - backing up current file as estagio_assincron_alu_run_msim_gate_verilog.do.bak7
 Info: Spawning ModelSim-Altera Simulation software 

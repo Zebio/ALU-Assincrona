@@ -25,7 +25,8 @@ begin
 	a		=8'b00000000;  //NULL
 	b		=8'b00000000;	//NULL
 	opr	=2'b00;			//NULL
-	#1;
+	#1000000;
+	$stop;
 	
 end
 

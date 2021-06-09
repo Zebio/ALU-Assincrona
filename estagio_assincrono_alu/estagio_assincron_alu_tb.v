@@ -1,5 +1,5 @@
 
-`timescale 1 ns/10 ps;  // time-unit = 1 ns, precision = 10 ps
+`timescale 1 us/10 ps;  // time-unit = 1 ns, precision = 10 ps
 
 module estagio_assincron_alu_tb();
 
@@ -24,23 +24,23 @@ begin
 	b		=8'b00000000;	//NULL
 	opr	=2'b00;			//NULL
 	ack_in=1;				//1
-	
-	for(i=0;i<=10; i=i+1) begin
-		#1 
+	for(i=0;i<200;i=i+1)
+	begin
+		a=8'b01011010;
+		b=8'b10101010;
+		opr=2'b01;
 		ack_in=0;
-		a		=8'b01011010;  //3
-		b		=8'b01011001;	//4
-		opr	=2'b01;			//0 = soma
-	
-		#1 	
-		ack_in=1;			//0
-		a		=8'b00000000;  //NULL
-		b		=8'b00000000;	//NULL
-		opr	=2'b00;			//NULL
+		#1;
+		a=8'b00000000;
+		b=8'b00000000;
+		opr=2'b00;
+		ack_in=1;
+		#1;
 	end
-	#1;
-	ack_in=0;
 	
+	#59999600;				//1u x 10^6 = 1ms
+	$stop;
 end
+
 
 endmodule 

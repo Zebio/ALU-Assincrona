@@ -62,11 +62,25 @@ set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH estagio_assincr
 set_global_assignment -name EDA_TEST_BENCH_NAME estagio_assincron_alu_tb -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME dut -section_id estagio_assincron_alu_tb
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME estagio_assincron_alu_tb -section_id estagio_assincron_alu_tb
+set_global_assignment -name EDA_WRITE_NODES_FOR_POWER_ESTIMATION ALL_NODES -section_id eda_simulation
+set_global_assignment -name EDA_TEST_BENCH_DESIGN_INSTANCE_NAME dut -section_id eda_simulation
+set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST ON -section_id eda_simulation
+set_global_assignment -name EDA_TEST_BENCH_FILE estagio_assincron_alu_tb.v -section_id estagio_assincron_alu_tb
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
+set_global_assignment -name POWER_USE_INPUT_FILES ON
+set_global_assignment -name POWER_DEFAULT_TOGGLE_RATE 12.5%
+set_global_assignment -name POWER_DEFAULT_INPUT_IO_TOGGLE_RATE 12.5%
+set_global_assignment -name POWER_USE_PVA OFF
+set_global_assignment -name POWER_REPORT_SIGNAL_ACTIVITY ON
+set_global_assignment -name POWER_INPUT_FILE_NAME simulation/modelsim/estagio_assincron_alu.vcd -section_id estagio_assincron_alu.vcd
+set_instance_assignment -name POWER_READ_INPUT_FILE estagio_assincron_alu.vcd -to estagio_assincron_alu
+set_global_assignment -name VERILOG_FILE "../../Celulas Muller/Celula Muller 2 Entradas/muller2estruturalB/muller2estruturalB.v"
+set_global_assignment -name VERILOG_FILE "../../Registradores Assincronos/Reg Assincrono/Reg Assincrono Comportamental/reg_ass_comp.v"
+set_global_assignment -name VERILOG_FILE "../../Registradores Assincronos/Reg Assincrono 4 bits/reg_ass_4bits.v"
+set_global_assignment -name VERILOG_FILE ../celula_3_de_5_comp/celula_3_de_5_comp.v
+set_global_assignment -name VERILOG_FILE "../celula 2 de 3 comp/celula2de3comp.v"
 set_global_assignment -name VERILOG_FILE ../reg_ass_estr2/reg_ass_estr2.v
-set_global_assignment -name VERILOG_FILE "../../Celula Muller 2 Entradas/muller2estruturalB/muller2estruturalB.v"
 set_global_assignment -name VERILOG_FILE ../somador_4bits_cin_of/somador_4bits_cin_of.v
-set_global_assignment -name VERILOG_FILE "../../Celula M de N 3 de 5/celula_3_de_5_comp/celula_3_de_5_comp.v"
-set_global_assignment -name VERILOG_FILE "../../Celula M de N 2 de 3/celula 2 de 3 comp/celula2de3comp.v"
 set_global_assignment -name VERILOG_FILE "../../../Fant NCL sandbox/NCL_sandbox/common/NCL_LIB.v"
 set_global_assignment -name VERILOG_FILE ../zero_detector_4bits/zero_detector_4bits.v
 set_global_assignment -name VERILOG_FILE ../somador_completo/somador_completo.v
@@ -76,18 +90,5 @@ set_global_assignment -name VERILOG_FILE "../../Reg Assincrono/Reg Assincrono Co
 set_global_assignment -name VERILOG_FILE "../../Reg Assincrono 4 bits/reg_ass_4bits.v"
 set_global_assignment -name VERILOG_FILE ../alu_4bits/alu_4bits.v
 set_global_assignment -name VERILOG_FILE estagio_assincron_alu.v
-set_global_assignment -name EDA_WRITE_NODES_FOR_POWER_ESTIMATION ALL_NODES -section_id eda_simulation
-set_global_assignment -name EDA_TEST_BENCH_DESIGN_INSTANCE_NAME dut -section_id eda_simulation
-set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST ON -section_id eda_simulation
-set_global_assignment -name EDA_TEST_BENCH_FILE estagio_assincron_alu_tb.v -section_id estagio_assincron_alu_tb
-set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
 set_global_assignment -name SDC_FILE "arquivo SDC.sdc"
-set_global_assignment -name POWER_USE_INPUT_FILES ON
-set_global_assignment -name POWER_DEFAULT_TOGGLE_RATE 12.5%
-set_global_assignment -name POWER_DEFAULT_INPUT_IO_TOGGLE_RATE 12.5%
-set_global_assignment -name POWER_USE_PVA OFF
-set_global_assignment -name POWER_REPORT_SIGNAL_ACTIVITY ON
-set_global_assignment -name POWER_INPUT_FILE_NAME simulation/modelsim/estagio_assincron_alu.vcd -section_id estagio_assincron_alu.vcd
-set_instance_assignment -name POWER_READ_INPUT_FILE estagio_assincron_alu.vcd -to estagio_assincron_alu
-set_global_assignment -name POWER_OUTPUT_SAF_NAME "C:\\Users\\mateu\\OneDrive\\Faculdade\\Digital\\Projetos Quartus\\Circuitos em NCL\\estagio_assincrono_alu\\simulation\\signal Activity.saf"
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
